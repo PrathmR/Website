@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.get(import.meta.env.VITE_API_URL + "/api/...");
+fetch("${import.meta.env.VITE_API_URL}/something");
 
 // const API = axios.create({
 // baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
