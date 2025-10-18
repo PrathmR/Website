@@ -32,15 +32,6 @@ const app = express();
 // Connect to database
 connectDB();
 
-const cors = require("cors");
-
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL,
-    credentials: true,
-  })
-);
-
 // Ensure upload directories exist
 const uploadDirs = ["uploads/avatars", "uploads/events", "uploads/payments"];
 uploadDirs.forEach((dir) => {
