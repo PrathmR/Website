@@ -77,7 +77,7 @@ app.use("/api", limiter);
 // Stricter rate limit for auth routes
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 1000, // 5 attempts
+  max: 1000, // 1000 attempts (only for testing purposes, adjust as needed)
   message: "Too many authentication attempts, please try again later.",
   skipSuccessfulRequests: true,
 });
