@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/",
   plugins: [react()],
   build: {
     // Enable code splitting
@@ -10,16 +11,16 @@ export default defineConfig({
       output: {
         manualChunks: {
           // Vendor chunks
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'framer-motion': ['framer-motion'],
-          'ui-vendor': ['lucide-react', 'react-hot-toast'],
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          "framer-motion": ["framer-motion"],
+          "ui-vendor": ["lucide-react", "react-hot-toast"],
         },
       },
     },
     // Optimize chunk size
     chunkSizeWarningLimit: 1000,
     // Enable minification
-    minify: 'terser',
+    minify: "terser",
     terserOptions: {
       compress: {
         drop_console: true, // Remove console.logs in production
@@ -31,7 +32,13 @@ export default defineConfig({
   },
   // Optimize dependencies
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion', 'axios'],
+    include: [
+      "react",
+      "react-dom",
+      "react-router-dom",
+      "framer-motion",
+      "axios",
+    ],
   },
   // Server configuration
   server: {
@@ -41,4 +48,4 @@ export default defineConfig({
       overlay: true,
     },
   },
-})
+});
